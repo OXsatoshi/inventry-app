@@ -1,0 +1,46 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <header>
+      <div class="hero-logo"><h1>MUSIC STORE</h1></div>
+      <form>
+        <label for="search">
+          <input type="text" id="search" name="search" />
+          <button type="submit">Search</button>
+        </label>
+      </form>
+    </header>
+    <main>
+      <sidebar>
+        <nav>
+          <ul>
+            <li><a>Dashboard</a></li>
+          </ul>
+          <h2>Categories</h2>
+          <ul>
+            <li><a>Artists</a></li>
+            <li><a>Albums</a></li>
+            <li><a>Labler</a></li>
+            <li><a>Genre</a></li>
+            <li><a>All Released</a></li>
+          </ul>
+          <h2>New</h2>
+          <ul>
+            <li><a>Artists</a></li>
+            <li><a>Albums</a></li>
+            <li><a>Labler</a></li>
+            <li><a>Genre</a></li>
+
+            <li><a>All Released</a></li>
+          </ul>
+        </nav>
+      </sidebar>
+      <div class="main-content"></div>
+    </main>
+  </body>
+</html>
