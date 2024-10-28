@@ -19,15 +19,15 @@
       <sidebar>
         <nav>
           <ul>
-            <li><a>Dashboard</a></li>
+            <li><a href="/">Dashboard</a></li>
           </ul>
           <h2>Categories</h2>
           <ul>
             <li><a>Artists</a></li>
-            <li><a>Albums</a></li>
+            <li><a href="/album">Albums</a></li>
             <li><a>Labler</a></li>
             <li><a>Genre</a></li>
-            <li><a>All Released</a></li>
+            <li><a href="/allrelease">All Released</a></li>
           </ul>
           <h2>New</h2>
           <ul>
@@ -35,12 +35,19 @@
             <li><a>Albums</a></li>
             <li><a>Labler</a></li>
             <li><a>Genre</a></li>
-
-            <li><a>All Released</a></li>
           </ul>
         </nav>
       </sidebar>
-      <div class="main-content"></div>
+      <div class="main-content">
+        <% if (view.dash) { %> <%-
+        include('dashboard',{releases:data,numberOfAllbum: numberOfAllbum,
+        numberOfItemInStock: numberOfItemInStock, numberOfItemLowInStock:
+        numberOfItemLowInStock,}) %> <% } else if (view.artist) { %> <%-
+        include('artists') %> <% } else if (view.label){%> <%- include('label')
+        %> <% } else if (view.genre) {%> <%- include('genre') %> <% } else if
+        (view.allreleased) {%> <%-include('allreleased',{releases:data}) %> <% }
+        else if (view.albums) {%> <%- include('album') %> <% } %>
+      </div>
     </main>
   </body>
 </html>

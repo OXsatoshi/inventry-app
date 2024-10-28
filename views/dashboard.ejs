@@ -1,0 +1,44 @@
+<div class="dash">
+  <div class="title"><h1>Dashboard</h1></div>
+  <div class="menu">
+    <a href="/album"
+      ><div class="total-album">
+        <span><%= numberOfAllbum %></span>
+        <span>total albums</span>
+        <span>More info</span>
+      </div>
+    </a>
+    <a href="/allrelease"
+      ><div class="item-onstock">
+        <span><%= numberOfItemInStock %></span>
+        <span>item on stock</span>
+        <span>More info</span>
+      </div></a
+    >
+    <a href="/allrelease/low"
+      ><div class="low-instock">
+        <span><%= numberOfItemLowInStock %></span>
+        <span>items low in stock</span>
+        <span>More info</span>
+      </div></a
+    >
+  </div>
+  <div class="last-release">
+    <h1>Last Release</h1>
+    <div class="allreleased">
+      <% releases.forEach((e, i) => { %>
+      <div>
+        <a href="allrelease/<%= e.id %>"><div class="image"></div> </a>
+        <div class="name">
+          <a href="allrelease/<%= e.release_id %>">
+            <h3><%= e.release_name %></h3>
+          </a>
+          <a href="artists/<%=e.artist_id%>"><%= e.artist_name %></a>
+          <p><%= e.price %>$</p>
+          <p>availlable: <%= e.instock %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>

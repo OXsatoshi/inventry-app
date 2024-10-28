@@ -1,0 +1,15 @@
+<div class="allreleased">
+  <% releases.forEach((e, i) => { %>
+  <div>
+    <a href="allrelease/<%= e.id %>"><div class="image"></div> </a>
+    <div class="name">
+      <a href="allrelease/<%= e.release_id %>">
+        <h3><%= e.release_name %></h3>
+      </a>
+      <a href="artists/<%=e.artist_id%>"><%= e.artist_name %></a>
+      <p><%= e.price %>$</p>
+      <p>availlable: <%= e.instock %></p>
+    </div>
+  </div>
+  <% }) %>
+</div>
